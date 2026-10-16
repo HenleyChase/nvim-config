@@ -169,12 +169,24 @@ wget -P ~/.local/share/fonts https://download.jetbrains.com/fonts/JetBrainsMono-
 
 <details><summary>Ubuntu Install Steps</summary>
 
-```
+### 1. Install Base System Dependencies
+```bash
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
-sudo apt install make gcc ripgrep fd-find tree-sitter-cli unzip git xclip wl-clipboard neovim
+# NOTE: tree-sitter-cli is excluded here because the Ubuntu apt version is outdated and breaks builds.
+sudo apt install make gcc ripgrep fd-find unzip git xclip wl-clipboard nodejs npm python3-venv neovim -y
 ```
+> **Mason Note:** `nodejs`, `npm`, and `python3-venv` are required above so Mason can successfully install language servers like `pyright` and `bash-language-server`.
+
+### 2. Install Up-to-Date Tree-Sitter CLI
+Instead of `apt`, use Rust's `cargo` to fetch a modern, working version of the tree-sitter compiler:
+```bash
+sudo apt remove tree-sitter-cli
+cargo install tree-sitter-cli
+```
+*Make sure `~/.cargo/bin` is added to your system's `PATH` variable.*
 </details>
+
 <details><summary>Debian Install Steps</summary>
 
 ```
