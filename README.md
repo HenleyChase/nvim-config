@@ -239,6 +239,17 @@ sudo apt install make gcc ripgrep fd-find tree-sitter-cli unzip git xclip neovim
 </details>
 
 #### Linux Install
+<details><summary>Nerd Font Install Steps</summary>
+
+```
+wget -P ~/.local/share/fonts https://github.com \
+&& cd ~/.local/share/fonts \
+&& unzip JetBrainsMono.zip \
+&& rm JetBrainsMono.zip \
+&& fc-cache -fv
+```
+</details>
+
 <details><summary>Ubuntu Install Steps</summary>
 
 ```
