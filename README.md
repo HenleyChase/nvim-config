@@ -163,11 +163,7 @@ After installing all the dependencies continue with the [Install Kickstart](#ins
 <details><summary>Nerd Font Install Steps</summary>
 
 ```
-wget -P ~/.local/share/fonts https://github.com \
-&& cd ~/.local/share/fonts \
-&& unzip JetBrainsMono.zip \
-&& rm JetBrainsMono.zip \
-&& fc-cache -fv
+wget -P ~/.local/share/fonts https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip && unzip -o JetBrainsMono-*.zip && rm JetBrainsMono-*.zip && fc-cache -fv
 ```
 </details>
 
