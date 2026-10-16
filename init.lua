@@ -623,6 +623,14 @@ do
 
   -- Shortcut for searching your Neovim configuration files
   vim.keymap.set('n', '<leader>sn', function() builtin.find_files { cwd = vim.fn.stdpath 'config', follow = true } end, { desc = '[S]earch [N]eovim files' })
+
+  -- Shortcut for searching through CWD
+  vim.keymap.set(
+    'n',
+    '<leader>sF',
+    function() builtin.live_grep { cwd = vim.fn.expand '%:p:h', prompt_title = 'Live Grep in Current Folder' } end,
+    { desc = '[S]earch current [F]older by grep' }
+  )
 end
 
 -- ============================================================
